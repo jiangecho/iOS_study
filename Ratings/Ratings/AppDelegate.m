@@ -25,12 +25,14 @@
     Player* player = [[Player alloc]init];
     player.name = @"jiang";
     player.game = @"game1";
+    player.rating = 3;
     
     [self.players addObject:player];
     
     player = [[Player alloc]init];
     player.name = @"echo";
     player.game = @"game2";
+    player.rating = 5;
     
     [self.players addObject:player];
     

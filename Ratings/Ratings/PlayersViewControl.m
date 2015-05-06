@@ -47,10 +47,44 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlayerCell"forIndexPath:indexPath];
     
     // Configure the cell...
+    UILabel* nameLabel = (UILabel*)[cell viewWithTag:100];
+    UILabel* gameLabel = (UILabel*)[cell viewWithTag:101];
+    UIImageView* starImageView = (UIImageView*)[cell viewWithTag:102];
+    
     Player* player = [self.plays objectAtIndex:indexPath.row];
-    cell.textLabel.text = player.name;
-    cell.detailTextLabel.text = player.game;
+    nameLabel.text = player.name;
+    gameLabel.text = player.game;
+    starImageView.image = [self imageForRating:player.rating];
+    
     return cell;
+}
+
+-(UIImage*)imageForRating:(int)rating{
+    UIImage* image = nil;
+    NSString* bundlePath = [[NSBundle mainBundle]bundlePath];
+    NSMutableString* imagePath;
+    switch (rating) {
+        case 1:
+            image = [UIImage imageNamed:@"1StarSmall.png"];
+            break;
+        case 2:
+            image = [UIImage imageNamed:@"2StarSmall.png"];
+            break;
+       case 3:
+            imagePath = [NSMutableString stringWithFormat:@"%@%@", bundlePath, @"3StarSmall.png"];
+            image = [UIImage imageNamed:imagePath];
+            break;
+        case 4:
+            image = [UIImage imageNamed:@"4StarSmall.png"];
+            break;
+        case 5:
+            image = [UIImage imageNamed:@"5StarSmall.png"];
+            break;
+            
+        default:
+            break;
+    }
+    return image;
 }
 
 /*
