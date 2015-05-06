@@ -10,6 +10,12 @@
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, strong)NSArray* myQuotes;
+@property (nonatomic, strong)NSMutableArray* moveQuotes;
+
+@property (nonatomic, strong)IBOutlet UITextView* quoteText;
+
+-(IBAction)quoteButtonTapped:(id)sender;
 
 @end
 

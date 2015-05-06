@@ -17,11 +17,23 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    NSString* plistPath = [[NSBundle mainBundle] pathForResource:@"quotes" ofType:@"plist"];
+    
+    self.myQuotes = [NSMutableArray arrayWithContentsOfFile:plistPath];
+   
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+
+-(IBAction)quoteButtonTapped:(id)sender {
+    int random = arc4random() % [self.myQuotes count];
+    NSString* quote = self.myQuotes[random][@"quote"];
+    
+    self.quoteText.text = quote;
 }
 
 @end
