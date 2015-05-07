@@ -8,33 +8,51 @@
         <scene sceneID="juw-X3-wED">
             <objects>
                 <tableViewController id="6sk-1j-MvB" customClass="PlayersViewControl" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="55" sectionHeaderHeight="22" sectionFooterHeight="22" id="rIA-D4-agj">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" sectionHeaderHeight="22" sectionFooterHeight="22" id="rIA-D4-agj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="PlayerCell" rowHeight="55" id="G92-ng-oki">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" reuseIdentifier="PlayerCell" rowHeight="55" id="G92-ng-oki" customClass="PlayerCell">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="G92-ng-oki" id="PjO-kc-uKl">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDh-Uy-I8c">
+                                        <label opaque="NO" userInteractionEnabled="NO" tag="100" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="65" placeholderIntrinsicHeight="21" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RDh-Uy-I8c">
                                             <rect key="frame" x="20" y="0.0" width="65" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWu-lt-8Q6">
+                                        <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="101" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="65" placeholderIntrinsicHeight="21" text="Game" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bWu-lt-8Q6">
                                             <rect key="frame" x="20" y="25" width="65" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <color key="highlightedColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vQB-ey-Mk3">
+                                        <imageView userInteractionEnabled="NO" tag="102" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" placeholderIntrinsicWidth="81" placeholderIntrinsicHeight="27" translatesAutoresizingMaskIntoConstraints="NO" id="vQB-ey-Mk3">
                                             <rect key="frame" x="206" y="13" width="81" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="27" id="KCT-F7-MDS"/>
+                                                <constraint firstAttribute="width" constant="81" id="Kwv-Js-I8B"/>
+                                            </constraints>
                                         </imageView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="RDh-Uy-I8c" firstAttribute="leading" secondItem="PjO-kc-uKl" secondAttribute="leading" constant="20" id="ak8-mu-c5C"/>
+                                        <constraint firstAttribute="centerY" secondItem="vQB-ey-Mk3" secondAttribute="centerY" id="fga-X1-Und"/>
+                                        <constraint firstAttribute="bottom" secondItem="bWu-lt-8Q6" secondAttribute="bottom" constant="8" id="ueY-D7-yyv"/>
+                                        <constraint firstItem="bWu-lt-8Q6" firstAttribute="top" secondItem="RDh-Uy-I8c" secondAttribute="bottom" constant="4" id="vMr-Cr-KBb"/>
+                                        <constraint firstItem="bWu-lt-8Q6" firstAttribute="leading" secondItem="RDh-Uy-I8c" secondAttribute="leading" id="xYc-og-WBA"/>
+                                        <constraint firstAttribute="trailing" secondItem="vQB-ey-Mk3" secondAttribute="trailing" constant="33" id="xm7-54-SKR"/>
+                                        <constraint firstItem="RDh-Uy-I8c" firstAttribute="top" secondItem="PjO-kc-uKl" secondAttribute="top" id="y23-Mv-f5S"/>
+                                    </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="gameLabel" destination="bWu-lt-8Q6" id="csn-jl-Shj"/>
+                                    <outlet property="playerLabel" destination="RDh-Uy-I8c" id="0E0-GN-IiZ"/>
+                                    <outlet property="ratingImageView" destination="vQB-ey-Mk3" id="Hyb-ge-PVs"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>

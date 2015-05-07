@@ -8,6 +8,7 @@
 
 #import "PlayersViewControl.h"
 #import "Player.h"
+#import "PlayerCell.h"
 
 @interface PlayersViewControl()
 
@@ -32,24 +33,28 @@
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
     // Return the number of sections.
     return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
     return [self.plays count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlayerCell"forIndexPath:indexPath];
+    PlayerCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PlayerCell"forIndexPath:indexPath];
     
     // Configure the cell...
+    /*
     UILabel* nameLabel = (UILabel*)[cell viewWithTag:100];
     UILabel* gameLabel = (UILabel*)[cell viewWithTag:101];
     UIImageView* starImageView = (UIImageView*)[cell viewWithTag:102];
+     */
+    
+    UILabel* nameLabel = ((PlayerCell*)cell).playerLabel;
+    UILabel* gameLabel = ((PlayerCell*)cell).gameLabel;
+    UIImageView* starImageView = ((PlayerCell*)cell).ratingImageView;
     
     Player* player = [self.plays objectAtIndex:indexPath.row];
     nameLabel.text = player.name;

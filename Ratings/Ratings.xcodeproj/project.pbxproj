@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		500CC8A51AFAE42B008B42E5 /* PlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 500CC8A41AFAE42B008B42E5 /* PlayerCell.m */; };
 		509CED041AFA426400A72B9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 509CED031AFA426400A72B9D /* main.m */; };
 		509CED071AFA426400A72B9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 509CED061AFA426400A72B9D /* AppDelegate.m */; };
 		509CED0A1AFA426400A72B9D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 509CED091AFA426400A72B9D /* ViewController.m */; };
@@ -53,6 +54,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		500CC8A31AFAE42B008B42E5 /* PlayerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerCell.h; sourceTree = "<group>"; };
+		500CC8A41AFAE42B008B42E5 /* PlayerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerCell.m; sourceTree = "<group>"; };
 		509CECFE1AFA426400A72B9D /* Ratings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ratings.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		509CED021AFA426400A72B9D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		509CED031AFA426400A72B9D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -148,6 +151,8 @@
 				509CED591AFA66D500A72B9D /* PlayersViewControl.m */,
 				509CED5B1AFA68E800A72B9D /* Player.h */,
 				509CED5C1AFA68E800A72B9D /* Player.m */,
+				500CC8A31AFAE42B008B42E5 /* PlayerCell.h */,
+				500CC8A41AFAE42B008B42E5 /* PlayerCell.m */,
 			);
 			path = Ratings;
 			sourceTree = "<group>";
@@ -337,6 +342,7 @@
 				509CED5A1AFA66D500A72B9D /* PlayersViewControl.m in Sources */,
 				509CED071AFA426400A72B9D /* AppDelegate.m in Sources */,
 				509CED041AFA426400A72B9D /* main.m in Sources */,
+				500CC8A51AFAE42B008B42E5 /* PlayerCell.m in Sources */,
 				509CED5D1AFA68E800A72B9D /* Player.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -532,6 +538,7 @@
 				509CED231AFA426400A72B9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		509CED241AFA426400A72B9D /* Build configuration list for PBXNativeTarget "RatingsTests" */ = {
 			isa = XCConfigurationList;
@@ -540,6 +547,7 @@
 				509CED261AFA426400A72B9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
