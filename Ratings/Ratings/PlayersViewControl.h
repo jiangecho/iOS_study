@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlayerDetailViewConroller.h"
 
-@interface PlayersViewControl : UITableViewController
+@interface PlayersViewControl : UITableViewController <PlayerDetailViewControllerDelegate>
 @property (nonatomic, strong) NSMutableArray* plays;
 
 @end

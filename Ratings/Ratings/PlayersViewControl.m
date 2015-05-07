@@ -9,6 +9,7 @@
 #import "PlayersViewControl.h"
 #import "Player.h"
 #import "PlayerCell.h"
+#import "PlayerDetailViewConroller.h"
 
 @interface PlayersViewControl()
 
@@ -133,5 +134,26 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+-(void)playerDetailViewControllerDidCancel:(PlayerDetailViewConroller *)controller{
+    [self dismissViewControllerAnimated:false completion:nil];
+    NSLog(@"cancel");
+}
+-(void)playerDetailViewControllerDidSave:(PlayerDetailViewConroller *)controller addPlayer:(Player *)player{
+    NSLog(@"save");
+    [self.plays addObject:player];
+    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:[self.plays count] -1 inSection:0];
+    [self.tableView insertRowsAtIndexPaths:[NSArray arrayWithObject:indexPath]withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self dismissViewControllerAnimated:true completion:nil];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"go2detail"]) {
+        UINavigationController *nav = segue.destinationViewController;
+        //PlayerDetailViewConroller *detailVC = (PlayerDetailViewConroller *)nav.visibleViewController;
+        PlayerDetailViewConroller* detailVC = nav.viewControllers[0];
+        detailVC.delegate = self;
+    }
+}
 
 @end

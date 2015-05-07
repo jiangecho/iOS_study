@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5005851F1AFB8BBC00AF77DC /* PlayerDetailViewConroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 5005851E1AFB8BBC00AF77DC /* PlayerDetailViewConroller.m */; };
 		500CC8A51AFAE42B008B42E5 /* PlayerCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 500CC8A41AFAE42B008B42E5 /* PlayerCell.m */; };
 		509CED041AFA426400A72B9D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 509CED031AFA426400A72B9D /* main.m */; };
 		509CED071AFA426400A72B9D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 509CED061AFA426400A72B9D /* AppDelegate.m */; };
@@ -54,6 +55,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		5005851D1AFB8BBC00AF77DC /* PlayerDetailViewConroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerDetailViewConroller.h; sourceTree = "<group>"; };
+		5005851E1AFB8BBC00AF77DC /* PlayerDetailViewConroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerDetailViewConroller.m; sourceTree = "<group>"; };
 		500CC8A31AFAE42B008B42E5 /* PlayerCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerCell.h; sourceTree = "<group>"; };
 		500CC8A41AFAE42B008B42E5 /* PlayerCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerCell.m; sourceTree = "<group>"; };
 		509CECFE1AFA426400A72B9D /* Ratings.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Ratings.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -153,6 +156,8 @@
 				509CED5C1AFA68E800A72B9D /* Player.m */,
 				500CC8A31AFAE42B008B42E5 /* PlayerCell.h */,
 				500CC8A41AFAE42B008B42E5 /* PlayerCell.m */,
+				5005851D1AFB8BBC00AF77DC /* PlayerDetailViewConroller.h */,
+				5005851E1AFB8BBC00AF77DC /* PlayerDetailViewConroller.m */,
 			);
 			path = Ratings;
 			sourceTree = "<group>";
@@ -339,6 +344,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				509CED0A1AFA426400A72B9D /* ViewController.m in Sources */,
+				5005851F1AFB8BBC00AF77DC /* PlayerDetailViewConroller.m in Sources */,
 				509CED5A1AFA66D500A72B9D /* PlayersViewControl.m in Sources */,
 				509CED071AFA426400A72B9D /* AppDelegate.m in Sources */,
 				509CED041AFA426400A72B9D /* main.m in Sources */,
