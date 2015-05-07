@@ -68,17 +68,17 @@
             image = [UIImage imageNamed:@"1StarSmall.png"];
             break;
         case 2:
-            image = [UIImage imageNamed:@"2StarSmall.png"];
+            image = [UIImage imageNamed:@"2StarsSmall.png"];
             break;
        case 3:
-            imagePath = [NSMutableString stringWithFormat:@"%@%@", bundlePath, @"3StarSmall.png"];
+            imagePath = [NSMutableString stringWithFormat:@"%@%@", bundlePath, @"/3StarsSmall.png"];
             image = [UIImage imageNamed:imagePath];
             break;
         case 4:
-            image = [UIImage imageNamed:@"4StarSmall.png"];
+            image = [UIImage imageNamed:@"4StarsSmall.png"];
             break;
         case 5:
-            image = [UIImage imageNamed:@"5StarSmall.png"];
+            image = [UIImage imageNamed:@"5StarsSmall.png"];
             break;
             
         default:
