@@ -1,68 +1,85 @@
 //
-//  PlayerDetailViewConroller.m
+//  GamePickerViewController.m
 //  Ratings
 //
-//  Created by jiangecho on 15/5/7.
+//  Created by jiangecho on 15/5/8.
 //  Copyright (c) 2015年 jiangecho. All rights reserved.
 //
 
-#import "PlayerDetailViewConroller.h"
+#import "GamePickerViewController.h"
 
-@interface PlayerDetailViewConroller ()
-@property(nonatomic, strong)Player* player;
+@interface GamePickerViewController ()
+@property(nonatomic, strong)NSArray* games;
+@property(nonatomic, assign)NSUInteger selectedIndex;
 
 @end
 
-@implementation PlayerDetailViewConroller
+@implementation GamePickerViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.games = [NSArray arrayWithObjects:@"game1", @"game2", @"game3", nil];
+    self.selectedIndex = [self.games indexOfObject:self.game];
+    
+    //[self.games initWithObjects:@"game1", @"game2", @"game3", nil];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    
-    self.player = [[Player alloc]init];
 }
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
--(void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath{
-    if (indexPath.item == 0) {
-        [[self nameTextField]becomeFirstResponder];
-    }
-}
-
-/*
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 #warning Potentially incomplete method implementation.
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 #warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return [self.games count];
 }
 
- */
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"GameCell" forIndexPath:indexPath];
     
+    cell.textLabel.text = [self.games objectAtIndex:indexPath.row];
     // Configure the cell...
+    
+    if (indexPath.row == self.selectedIndex) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    }else{
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
     
     return cell;
 }
-*/
+
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    self.selectedIndex = indexPath.row;
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    if (self.selectedIndex != NSNotFound) {
+        UITableViewCell* cell = [tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:_selectedIndex inSection:0]];
+        cell.accessoryType = UITableViewCellAccessoryNone;
+    }
+    
+    self.selectedIndex = indexPath.row;
+    UITableViewCell* cell = [tableView cellForRowAtIndexPath:indexPath];
+    cell.accessoryType = UITableViewCellAccessoryCheckmark;
+    
+    NSString* theGame = [self.games objectAtIndex:_selectedIndex];
+    [self.delegate gamePickerViewController:self didSelectGame:theGame];
+}
 
 /*
 // Override to support conditional editing of the table view.
@@ -98,29 +115,14 @@
 }
 */
 
+/*
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
-    if ([segue.identifier isEqualToString:@"PickGame"]) {
-        GamePickerViewController* gamePickerController = segue.destinationViewController;
-        gamePickerController.delegate = self;
-        //gamePickerController.game = self.player.game;
-    }
 }
+*/
 
--(void)gamePickerViewController:(GamePickerViewController *)contoller didSelectGame:(NSString *)game{
-    self.player.game = game;
-}
-
-- (IBAction)done:(id)sender {
-    self.player.name = self.nameTextField.text;
-    [self.delegate playerDetailViewControllerDidSave:self addPlayer:_player];
-}
-
-- (IBAction)cancel:(id)sender {
-    [self.delegate playerDetailViewControllerDidCancel:self];
-}
 @end

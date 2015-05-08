@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "Player.h"
+#import "GamePickerViewController.h"
 
 @class PlayerDetailViewConroller;
 @protocol PlayerDetailViewControllerDelegate <NSObject>
@@ -17,7 +18,7 @@
 @end
 
 
-@interface PlayerDetailViewConroller : UITableViewController
+@interface PlayerDetailViewConroller : UITableViewController<GamePickerViewControllerDelete>
 @property(nonatomic, weak) id<PlayerDetailViewControllerDelegate> delegate;
 - (IBAction)done:(id)sender;
 - (IBAction)cancel:(id)sender;

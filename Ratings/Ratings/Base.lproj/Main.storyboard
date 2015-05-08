@@ -126,7 +126,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="k1x-RR-n55" kind="push" identifier="pickGame" id="IJQ-eH-Vec"/>
+                                            <segue destination="k1x-RR-n55" kind="push" identifier="PickGame" id="IJQ-eH-Vec"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -153,10 +153,10 @@
             </objects>
             <point key="canvasLocation" x="1992" y="-155"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Game Picker View Controller-->
         <scene sceneID="WOb-Vl-lxl">
             <objects>
-                <tableViewController id="k1x-RR-n55" sceneMemberID="viewController">
+                <tableViewController id="k1x-RR-n55" customClass="GamePickerViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="lkQ-JI-9wc">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
