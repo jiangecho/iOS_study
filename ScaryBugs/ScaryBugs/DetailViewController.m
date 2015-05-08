@@ -45,6 +45,7 @@
         self.titleField.text = self.detailItem.data.name;
         self.imageView.image = self.detailItem.fullImage;
         self.rateView.rating = self.detailItem.data.rating;
+        self.rateView.editable = YES;
         
     }
 }

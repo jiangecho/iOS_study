@@ -109,8 +109,8 @@
                                             <action selector="addPictureTapped:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="twI-lf-kV8"/>
                                         </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap to Change Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syD-lg-97h">
-                                        <rect key="frame" x="106" y="162" width="236" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to Change Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syD-lg-97h">
+                                        <rect key="frame" x="142" y="162" width="164" height="21"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                         <nil key="highlightedColor"/>
@@ -121,7 +121,9 @@
                                     <constraint firstItem="AEF-cd-tcY" firstAttribute="leading" secondItem="O7Z-2S-Mfk" secondAttribute="leading" id="3g0-vm-0nN"/>
                                     <constraint firstAttribute="bottom" secondItem="5wr-b5-snq" secondAttribute="bottom" id="CeY-SA-aT3"/>
                                     <constraint firstItem="5wr-b5-snq" firstAttribute="leading" secondItem="O7Z-2S-Mfk" secondAttribute="leading" id="OD0-fI-98G"/>
+                                    <constraint firstAttribute="centerX" secondItem="syD-lg-97h" secondAttribute="centerX" id="UAG-tH-cqw"/>
                                     <constraint firstAttribute="trailing" secondItem="5wr-b5-snq" secondAttribute="trailing" id="dOI-nB-jcF"/>
+                                    <constraint firstAttribute="centerY" secondItem="syD-lg-97h" secondAttribute="centerY" id="hwx-Aj-8Zn"/>
                                     <constraint firstAttribute="bottom" secondItem="AEF-cd-tcY" secondAttribute="bottom" id="icY-9i-V7k"/>
                                     <constraint firstAttribute="trailing" secondItem="AEF-cd-tcY" secondAttribute="trailing" id="rOG-Y8-8IC"/>
                                     <constraint firstItem="AEF-cd-tcY" firstAttribute="top" secondItem="O7Z-2S-Mfk" secondAttribute="top" id="s0t-tD-9R7"/>
