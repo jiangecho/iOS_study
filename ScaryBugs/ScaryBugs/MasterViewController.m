@@ -8,6 +8,7 @@
 
 #import "MasterViewController.h"
 #import "DetailViewController.h"
+#import "ScaryBugDoc.h"
 
 @interface MasterViewController ()
 
@@ -45,12 +46,16 @@
     [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
 }
 
+-(void)didMoveToParentViewController:(UIViewController *)parent{
+    [self.tableView reloadData];
+}
+
 #pragma mark - Segues
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([[segue identifier] isEqualToString:@"showDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-        NSDate *object = self.bugs[indexPath.row];
+        ScaryBugDoc *object = self.bugs[indexPath.row];
         [[segue destinationViewController] setDetailItem:object];
     }
 }

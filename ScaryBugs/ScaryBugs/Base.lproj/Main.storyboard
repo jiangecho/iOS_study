@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="rS3-R9-Ivy">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Master-->
@@ -74,24 +75,80 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Detail view content goes here" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="Lei-5M-9Gs">
-                                <rect key="frame" x="20" y="292" width="560" height="17"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="GtK-TL-K5F">
+                                <rect key="frame" x="76" y="104" width="448" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="gKh-Mz-UbQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
+                                <connections>
+                                    <action selector="titleFiedlTextChanged:" destination="Ah7-4n-0Wa" eventType="editingChanged" id="X6P-k1-mrd"/>
+                                    <outlet property="delegate" destination="Ah7-4n-0Wa" id="5yA-9k-xuZ"/>
+                                </connections>
+                            </textField>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uJ9-Ph-uk5" customClass="RWTRateView">
+                                <rect key="frame" x="76" y="540" width="448" height="30"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="Tdw-Lz-xhh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="O7Z-2S-Mfk">
+                                <rect key="frame" x="76" y="164" width="448" height="346"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5wr-b5-snq">
+                                        <rect key="frame" x="0.0" y="0.0" width="448" height="346"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AEF-cd-tcY">
+                                        <rect key="frame" x="0.0" y="0.0" width="448" height="346"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="addPictureTapped:" destination="Ah7-4n-0Wa" eventType="touchUpInside" id="twI-lf-kV8"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tap to Change Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="syD-lg-97h">
+                                        <rect key="frame" x="106" y="162" width="236" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="AEF-cd-tcY" firstAttribute="leading" secondItem="O7Z-2S-Mfk" secondAttribute="leading" id="3g0-vm-0nN"/>
+                                    <constraint firstAttribute="bottom" secondItem="5wr-b5-snq" secondAttribute="bottom" id="CeY-SA-aT3"/>
+                                    <constraint firstItem="5wr-b5-snq" firstAttribute="leading" secondItem="O7Z-2S-Mfk" secondAttribute="leading" id="OD0-fI-98G"/>
+                                    <constraint firstAttribute="trailing" secondItem="5wr-b5-snq" secondAttribute="trailing" id="dOI-nB-jcF"/>
+                                    <constraint firstAttribute="bottom" secondItem="AEF-cd-tcY" secondAttribute="bottom" id="icY-9i-V7k"/>
+                                    <constraint firstAttribute="trailing" secondItem="AEF-cd-tcY" secondAttribute="trailing" id="rOG-Y8-8IC"/>
+                                    <constraint firstItem="AEF-cd-tcY" firstAttribute="top" secondItem="O7Z-2S-Mfk" secondAttribute="top" id="s0t-tD-9R7"/>
+                                    <constraint firstItem="5wr-b5-snq" firstAttribute="top" secondItem="O7Z-2S-Mfk" secondAttribute="top" id="z7W-vN-MYa"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Lei-5M-9Gs" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leading" constant="20" symbolic="YES" id="62x-JV-TTJ"/>
-                            <constraint firstItem="Lei-5M-9Gs" firstAttribute="centerY" secondItem="MMQ-IT-qOo" secondAttribute="centerY" id="JzS-HC-Rnl"/>
-                            <constraint firstAttribute="trailing" secondItem="Lei-5M-9Gs" secondAttribute="trailing" constant="20" symbolic="YES" id="pXB-RP-Zz6"/>
+                            <constraint firstItem="GtK-TL-K5F" firstAttribute="top" secondItem="cIm-e0-J51" secondAttribute="bottom" constant="40" id="0Fr-Qk-BdF"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="uJ9-Ph-uk5" secondAttribute="trailing" constant="60" id="8eR-cP-c2X"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="GtK-TL-K5F" secondAttribute="trailing" constant="60" id="9GF-eK-bDo"/>
+                            <constraint firstItem="uJ9-Ph-uk5" firstAttribute="top" secondItem="O7Z-2S-Mfk" secondAttribute="bottom" constant="30" id="CxQ-q3-Q6H"/>
+                            <constraint firstItem="O7Z-2S-Mfk" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leadingMargin" constant="60" id="DSP-3F-HtB"/>
+                            <constraint firstItem="O7Z-2S-Mfk" firstAttribute="top" secondItem="GtK-TL-K5F" secondAttribute="bottom" constant="30" id="H5x-AR-j2B"/>
+                            <constraint firstItem="GtK-TL-K5F" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leadingMargin" constant="60" id="Rag-cy-tew"/>
+                            <constraint firstItem="a0L-h9-sNL" firstAttribute="top" secondItem="uJ9-Ph-uk5" secondAttribute="bottom" constant="30" id="Si6-6R-KHr"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="O7Z-2S-Mfk" secondAttribute="trailing" constant="60" id="TzV-Mg-iD3"/>
+                            <constraint firstItem="uJ9-Ph-uk5" firstAttribute="leading" secondItem="MMQ-IT-qOo" secondAttribute="leadingMargin" constant="60" id="crg-nW-yUG"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Detail" id="cra-N8-TIN"/>
+                    <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <connections>
-                        <outlet property="detailDescriptionLabel" destination="Lei-5M-9Gs" id="sCT-F7-F6f"/>
+                        <outlet property="imageView" destination="5wr-b5-snq" id="d6U-3H-VVI"/>
+                        <outlet property="rateView" destination="uJ9-Ph-uk5" id="Aj3-fv-KUJ"/>
+                        <outlet property="titleField" destination="GtK-TL-K5F" id="fWG-5n-7Hl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lrm-kH-fPn" sceneMemberID="firstResponder"/>
