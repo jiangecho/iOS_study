@@ -146,6 +146,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="detailLabel" destination="vft-UV-tyj" id="NtF-Yk-v97"/>
                         <outlet property="nameTextField" destination="XT9-bd-EKo" id="fWb-0B-NS8"/>
                     </connections>
                 </tableViewController>

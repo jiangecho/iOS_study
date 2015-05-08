@@ -107,12 +107,15 @@
     if ([segue.identifier isEqualToString:@"PickGame"]) {
         GamePickerViewController* gamePickerController = segue.destinationViewController;
         gamePickerController.delegate = self;
-        //gamePickerController.game = self.player.game;
+        gamePickerController.game = self.player.game;
     }
 }
 
 -(void)gamePickerViewController:(GamePickerViewController *)contoller didSelectGame:(NSString *)game{
     self.player.game = game;
+    self.detailLabel.text = game;
+    // after the user has made his choice, dismiss the game list
+    [self.navigationController popViewControllerAnimated:YES];
 }
 
 - (IBAction)done:(id)sender {
