@@ -11,13 +11,16 @@
 #import "PlayerCell.h"
 #import "PlayerDetailViewConroller.h"
 
-@interface PlayersViewControl()
+@interface PlayersViewControl(){
+    NSInteger selectedIndex;
+}
 
 @end
 
 @implementation PlayersViewControl
 - (void)viewDidLoad {
     [super viewDidLoad];
+    selectedIndex = NSNotFound;
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -135,6 +138,11 @@
 }
 */
 
+-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    selectedIndex = indexPath.row;
+    [self performSegueWithIdentifier:@"go2detail" sender:nil];
+}
+
 -(void)playerDetailViewControllerDidCancel:(PlayerDetailViewConroller *)controller{
     [self dismissViewControllerAnimated:false completion:nil];
     NSLog(@"cancel");
@@ -153,6 +161,11 @@
         //PlayerDetailViewConroller *detailVC = (PlayerDetailViewConroller *)nav.visibleViewController;
         PlayerDetailViewConroller* detailVC = nav.viewControllers[0];
         detailVC.delegate = self;
+        
+        if (selectedIndex != NSNotFound) {
+            Player* player = [self.plays objectAtIndex:selectedIndex];
+            detailVC.player = player;
+        }
     }
 }
 

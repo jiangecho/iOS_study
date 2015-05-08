@@ -9,7 +9,6 @@
 #import "PlayerDetailViewConroller.h"
 
 @interface PlayerDetailViewConroller ()
-@property(nonatomic, strong)Player* player;
 
 @end
 
@@ -24,7 +23,12 @@
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     
-    self.player = [[Player alloc]init];
+    if (self.player == nil) {
+        self.player = [[Player alloc]init];
+    }else{
+        self.nameTextField.text = self.player.name;
+        self.detailLabel.text = self.player.game;
+    }
 }
 
 - (void)didReceiveMemoryWarning {
