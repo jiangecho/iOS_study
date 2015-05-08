@@ -8,6 +8,9 @@
 
 #import "AppDelegate.h"
 #import "DetailViewController.h"
+#import "ScaryBugDoc.h"
+#import "MasterViewController.h"
+
 
 @interface AppDelegate ()
 
@@ -18,6 +21,17 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    ScaryBugDoc* bug1 = [[ScaryBugDoc alloc]initWithTitle:@"bug1" rating:0.1f thumbImage:[UIImage imageNamed:@"centipedeThumb.jpg"] fullImage:[UIImage imageNamed:@"centipede.jpg"]];
+    ScaryBugDoc* bug2 = [[ScaryBugDoc alloc]initWithTitle:@"bug2" rating:0.2f thumbImage:[UIImage imageNamed:@"ladybugThumb.jpg"] fullImage:[UIImage imageNamed:@"ladybug.jpg"]];
+    
+    NSMutableArray* bugs = [NSMutableArray arrayWithObjects:bug1, bug2, nil];
+    
+    UINavigationController* nav = (UINavigationController*)self.window.rootViewController;
+    MasterViewController *masterViewController = (MasterViewController*)[nav.viewControllers objectAtIndex:0];
+    
+    masterViewController.bugs = bugs;
+    
     return YES;
 }
 

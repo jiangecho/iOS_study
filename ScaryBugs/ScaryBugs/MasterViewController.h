@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ScaryBugDoc.h"
 
 @interface MasterViewController : UITableViewController
-
+@property(nonatomic, strong)NSMutableArray* bugs;
 
 @end
 
