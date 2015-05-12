@@ -71,6 +71,7 @@
         self.picker.delegate = self;
         self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
         self.picker.editing = false;
+        //self.picker.navigationItem.rightBarButtonItem.title = @"Done";
     }
     
     [self presentViewController:_picker animated:YES completion:nil];

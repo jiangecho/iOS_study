@@ -11,6 +11,7 @@
 
 @interface MasterViewController : UITableViewController
 @property(nonatomic, strong)NSMutableArray* bugs;
+- (IBAction)addBug:(id)sender;
 
 @end
 

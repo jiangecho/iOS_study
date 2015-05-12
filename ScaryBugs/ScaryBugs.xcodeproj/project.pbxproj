@@ -31,6 +31,7 @@
 		5005857E1AFCDC4B00AF77DC /* shockedface2_empty.png in Resources */ = {isa = PBXBuildFile; fileRef = 5005857A1AFCDC4B00AF77DC /* shockedface2_empty.png */; };
 		5005857F1AFCDC4B00AF77DC /* shockedface2_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 5005857B1AFCDC4B00AF77DC /* shockedface2_full.png */; };
 		500585801AFCDC4B00AF77DC /* shockedface2_half.png in Resources */ = {isa = PBXBuildFile; fileRef = 5005857C1AFCDC4B00AF77DC /* shockedface2_half.png */; };
+		500585821B01856B00AF77DC /* launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 500585811B01856B00AF77DC /* launcher.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +80,7 @@
 		5005857A1AFCDC4B00AF77DC /* shockedface2_empty.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shockedface2_empty.png; sourceTree = "<group>"; };
 		5005857B1AFCDC4B00AF77DC /* shockedface2_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shockedface2_full.png; sourceTree = "<group>"; };
 		5005857C1AFCDC4B00AF77DC /* shockedface2_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shockedface2_half.png; sourceTree = "<group>"; };
+		500585811B01856B00AF77DC /* launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launcher.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -186,6 +188,7 @@
 		500585701AFCD36100AF77DC /* images */ = {
 			isa = PBXGroup;
 			children = (
+				500585811B01856B00AF77DC /* launcher.png */,
 				500585791AFCDC4B00AF77DC /* logo1.png */,
 				5005857A1AFCDC4B00AF77DC /* shockedface2_empty.png */,
 				5005857B1AFCDC4B00AF77DC /* shockedface2_full.png */,
@@ -301,6 +304,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5005853E1AFCB9F600AF77DC /* Main.storyboard in Resources */,
+				500585821B01856B00AF77DC /* launcher.png in Resources */,
 				5005856C1AFCD35400AF77DC /* potatoBug.jpg in Resources */,
 				5005856E1AFCD35400AF77DC /* wolfSpider.jpg in Resources */,
 				5005856F1AFCD35400AF77DC /* wolfSpiderThumb.jpg in Resources */,
@@ -534,6 +538,7 @@
 				500585541AFCB9F600AF77DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		500585551AFCB9F600AF77DC /* Build configuration list for PBXNativeTarget "ScaryBugsTests" */ = {
 			isa = XCConfigurationList;
@@ -542,6 +547,7 @@
 				500585571AFCB9F600AF77DC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -23,12 +23,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    /*
     self.navigationItem.leftBarButtonItem = self.editButtonItem;
 
     UIBarButtonItem *addButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemAdd target:self action:@selector(insertNewObject:)];
     self.navigationItem.rightBarButtonItem = addButton;
     
+     */
     self.title = @"ScaryBugs";
+    self.navigationItem.leftBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -36,14 +39,16 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void)insertNewObject:(id)sender {
-    if (!self.bugs) {
-        self.bugs = [[NSMutableArray alloc] init];
-    }
-    // TODO
-    [self.bugs insertObject:[NSDate date] atIndex:0];
-    NSIndexPath *indexPath = [NSIndexPath indexPathForRow:0 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+- (IBAction)addBug:(id)sender{
+    ScaryBugDoc* bug = [[ScaryBugDoc alloc]initWithTitle:@"new bug" rating:0 thumbImage:nil fullImage:nil];
+    [_bugs addObject:bug];
+    
+    NSIndexPath* indexPath = [NSIndexPath indexPathForRow:_bugs.count - 1 inSection:0];
+    [self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:YES];
+    
+    //[self.tableView insertRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationAutomatic];
+    [self.tableView selectRowAtIndexPath:indexPath animated:YES scrollPosition:UITableViewScrollPositionMiddle];
+    [self performSegueWithIdentifier:@"showDetail" sender:self];
 }
 
 -(void)didMoveToParentViewController:(UIViewController *)parent{
@@ -84,6 +89,13 @@
     return YES;
 }
 
+
+// enable scroll to delete
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    return UITableViewCellEditingStyleDelete;
+}
+
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         [self.bugs removeObjectAtIndex:indexPath.row];
@@ -93,4 +105,7 @@
     }
 }
 
+
+//- (IBAction)addBug:(id)sender {
+//}
 @end
