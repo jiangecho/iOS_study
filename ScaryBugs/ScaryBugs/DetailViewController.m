@@ -9,6 +9,7 @@
 #import "DetailViewController.h"
 #import "RWTRateView.h"
 #import "RWTUIImageExtras.h"
+#import "SVProgressHUD.h"
 
 @interface DetailViewController ()
 
@@ -67,14 +68,25 @@
 
 - (IBAction)addPictureTapped:(id)sender {
     if (self.picker == nil) {
-        self.picker = [[UIImagePickerController alloc]init];
-        self.picker.delegate = self;
-        self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-        self.picker.editing = false;
-        //self.picker.navigationItem.rightBarButtonItem.title = @"Done";
+        
+        [SVProgressHUD showWithStatus:@"Loading picker..."];
+        dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+        dispatch_async(concurrentQueue, ^{
+            self.picker = [[UIImagePickerController alloc]init];
+            self.picker.delegate = self;
+            self.picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+            self.picker.allowsEditing = NO;
+            
+            dispatch_async(dispatch_get_main_queue(), ^{
+                [self presentViewController:self.picker animated:YES completion:nil];
+                [SVProgressHUD dismiss];
+            });
+        });
+        
+    }else{
+        [self presentViewController:_picker animated:YES completion:nil];
     }
     
-    [self presentViewController:_picker animated:YES completion:nil];
     
 }
 
@@ -97,13 +109,24 @@
 
 #pragma mark UIImagePickerControllerDelegate
 -(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
-    UIImage* fullImage = (UIImage* )[info objectForKey:UIImagePickerControllerOriginalImage];
-    UIImage* thumbImage = [fullImage imageByScalingAndCroppingForSize:CGSizeMake(44, 44)];
     
-    self.detailItem.fullImage = fullImage;
-    self.detailItem.thumbImage = thumbImage;
+    [SVProgressHUD showWithStatus:@"Resize image..."];
+    dispatch_queue_t concurrentQueue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_async(concurrentQueue, ^{
+        UIImage* fullImage = [info objectForKey:UIImagePickerControllerOriginalImage];
+        UIImage* thumbImage = [fullImage imageByScalingAndCroppingForSize:CGSizeMake(44, 44)];
+        
+        dispatch_async(dispatch_get_main_queue(), ^{
+            self.detailItem.fullImage = fullImage;
+            self.detailItem.thumbImage = thumbImage;
+            self.imageView.image = fullImage;
+            
+            [SVProgressHUD dismiss];
+        });
+    });
     
-    self.imageView.image = fullImage;
+    [self dismissViewControllerAnimated:YES completion:nil];
+
 }
 
 @end

@@ -32,6 +32,10 @@
 		5005857F1AFCDC4B00AF77DC /* shockedface2_full.png in Resources */ = {isa = PBXBuildFile; fileRef = 5005857B1AFCDC4B00AF77DC /* shockedface2_full.png */; };
 		500585801AFCDC4B00AF77DC /* shockedface2_half.png in Resources */ = {isa = PBXBuildFile; fileRef = 5005857C1AFCDC4B00AF77DC /* shockedface2_half.png */; };
 		500585821B01856B00AF77DC /* launcher.png in Resources */ = {isa = PBXBuildFile; fileRef = 500585811B01856B00AF77DC /* launcher.png */; };
+		500585841B0219E700AF77DC /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 500585831B0219E700AF77DC /* QuartzCore.framework */; };
+		500585921B021F2300AF77DC /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5005858D1B021F2300AF77DC /* SVIndefiniteAnimatedView.m */; };
+		500585931B021F2300AF77DC /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5005858F1B021F2300AF77DC /* SVProgressHUD.bundle */; };
+		500585941B021F2300AF77DC /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 500585911B021F2300AF77DC /* SVProgressHUD.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -81,6 +85,14 @@
 		5005857B1AFCDC4B00AF77DC /* shockedface2_full.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shockedface2_full.png; sourceTree = "<group>"; };
 		5005857C1AFCDC4B00AF77DC /* shockedface2_half.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shockedface2_half.png; sourceTree = "<group>"; };
 		500585811B01856B00AF77DC /* launcher.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = launcher.png; sourceTree = "<group>"; };
+		500585831B0219E700AF77DC /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		5005858C1B021F2300AF77DC /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		5005858D1B021F2300AF77DC /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		5005858E1B021F2300AF77DC /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		5005858F1B021F2300AF77DC /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		500585901B021F2300AF77DC /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		500585911B021F2300AF77DC /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		500585951B021FC800AF77DC /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; name = SVProgressHUD.bundle; path = ScaryBugs/SVProgressHUD/SVProgressHUD.bundle; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500585841B0219E700AF77DC /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -104,6 +117,8 @@
 		500585231AFCB9F600AF77DC = {
 			isa = PBXGroup;
 			children = (
+				500585951B021FC800AF77DC /* SVProgressHUD.bundle */,
+				500585831B0219E700AF77DC /* QuartzCore.framework */,
 				5005852E1AFCB9F600AF77DC /* ScaryBugs */,
 				5005854B1AFCB9F600AF77DC /* ScaryBugsTests */,
 				5005852D1AFCB9F600AF77DC /* Products */,
@@ -122,6 +137,7 @@
 		5005852E1AFCB9F600AF77DC /* ScaryBugs */ = {
 			isa = PBXGroup;
 			children = (
+				5005858B1B021F2300AF77DC /* SVProgressHUD */,
 				500585721AFCDBED00AF77DC /* helper */,
 				500585711AFCDBDC00AF77DC /* view */,
 				500585701AFCD36100AF77DC /* images */,
@@ -223,6 +239,19 @@
 			name = helper;
 			sourceTree = "<group>";
 		};
+		5005858B1B021F2300AF77DC /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				5005858C1B021F2300AF77DC /* SVIndefiniteAnimatedView.h */,
+				5005858D1B021F2300AF77DC /* SVIndefiniteAnimatedView.m */,
+				5005858E1B021F2300AF77DC /* SVProgressHUD-Prefix.pch */,
+				5005858F1B021F2300AF77DC /* SVProgressHUD.bundle */,
+				500585901B021F2300AF77DC /* SVProgressHUD.h */,
+				500585911B021F2300AF77DC /* SVProgressHUD.m */,
+			);
+			path = SVProgressHUD;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -303,6 +332,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				500585931B021F2300AF77DC /* SVProgressHUD.bundle in Resources */,
 				5005853E1AFCB9F600AF77DC /* Main.storyboard in Resources */,
 				500585821B01856B00AF77DC /* launcher.png in Resources */,
 				5005856C1AFCD35400AF77DC /* potatoBug.jpg in Resources */,
@@ -341,8 +371,10 @@
 				500585781AFCDC1C00AF77DC /* RWTUIImageExtras.m in Sources */,
 				500585351AFCB9F600AF77DC /* AppDelegate.m in Sources */,
 				500585381AFCB9F600AF77DC /* MasterViewController.m in Sources */,
+				500585941B021F2300AF77DC /* SVProgressHUD.m in Sources */,
 				500585321AFCB9F600AF77DC /* main.m in Sources */,
 				5005855F1AFCCCA500AF77DC /* ScaryBugDoc.m in Sources */,
+				500585921B021F2300AF77DC /* SVIndefiniteAnimatedView.m in Sources */,
 				5005853B1AFCB9F600AF77DC /* DetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
